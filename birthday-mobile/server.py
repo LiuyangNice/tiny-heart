@@ -10,7 +10,7 @@ def main():
     # 设置socket选项，立即释放端口，正常情况下，服务器断开连接后，需要1-2分钟才会释放端口
     tcp_server.setsockopt(SOL_SOCKET, SO_REUSEADDR, True)
     # 局域网下其他电脑可以通过 本机ip:9090访问，本机可以使用127.0.0.1:9090访问（默认是80,所以后面要加端口号）
-    tcp_server.bind(("", 9090))
+    tcp_server.bind(("", 8000))
     # 设置监听：单任务，同一时刻只有一个客户端能建立连接，其他的都等着建立连接
     tcp_server.listen(128)
     # 循环接受可客户端的连接请求
